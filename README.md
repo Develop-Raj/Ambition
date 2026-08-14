@@ -1,6 +1,6 @@
 # Ambition — Habit Tracker
 
-A single-file, self-contained habit tracker with daily, weekly, and annual dashboards, built around one core rule: **touch at least 3 categories a day, and every category at least once a week.**
+A habit tracker with daily, weekly, and annual dashboards, built around one core rule: **touch at least 3 categories a day, and every category at least once a week.**
 ---
 ## 🌐 Live Demo
 
@@ -16,11 +16,6 @@ A single-file, self-contained habit tracker with daily, weekly, and annual dashb
 ![Ambition](screenshots/preview2.png)
 ![Ambition](screenshots/preview3.png)
 ![Ambition](screenshots/preview4.png)
-
-## Getting started
-
-1. Open `ambition.html` in any modern browser (Chrome, Safari, Firefox, Edge).
-2. That's it — no install, no build step, no server. Your data saves automatically as you use it.
 
 ---
 
