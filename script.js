@@ -88,35 +88,8 @@ let yearOffset = 0; // for annual page
 function uid(){ return 'h_' + Math.random().toString(36).slice(2,10) + Date.now().toString(36).slice(-4); }
 
 function defaultState(){
-  const mk = (name, cat, freq) => ({ id: uid(), name, category: cat, frequency: freq, createdAt: todayStr(), archived:false });
   return {
-    habits: [
-      mk('Read 20 pages', 'mind', {type:'daily'}),
-      mk('Learn something new', 'mind', {type:'weekdays', days:[1,2,3,4,5]}),
-      mk('Finish a book', 'mind', {type:'monthly_count', count:1}),
-
-      mk('Exercise', 'body', {type:'daily'}),
-      mk('Go for a run', 'body', {type:'weekly_count', count:3}),
-      mk('Take a long walk', 'body', {type:'weekly_count', count:5}),
-
-      mk('Zero cuss words', 'voice', {type:'daily'}),
-      mk('Have one real conversation', 'voice', {type:'weekly_count', count:3}),
-
-      mk('Shower', 'hygiene', {type:'daily'}),
-      mk('Skincare routine', 'hygiene', {type:'daily'}),
-
-      mk('Sleep by 11pm', 'rest', {type:'daily'}),
-      mk('No screens before bed', 'rest', {type:'daily'}),
-
-      mk('Drink 2L water', 'fuel', {type:'daily'}),
-      mk('Home-cooked meal', 'fuel', {type:'weekly_count', count:4}),
-
-      mk('90 min deep work', 'focus', {type:'weekdays', days:[1,2,3,4,5]}),
-      mk('No phone first hour', 'focus', {type:'daily'}),
-
-      mk('Practice a skill', 'craft', {type:'weekly_count', count:3}),
-      mk('Creative journaling', 'craft', {type:'weekly_count', count:1}),
-    ],
+    habits: [],
     completions: {}, // habitId -> [dateStr,...]
     createdAt: todayStr(),
   };
@@ -475,11 +448,15 @@ function renderTodayHabitList(){
           <div class="habit-meta">${freqLabel(h.frequency)}${pp? ' · '+pp.count+'/'+pp.target+' this period':''}</div>
         </div>
         ${streak>0?`<div class="habit-streak">${svgIcon('flame')}${streak}</div>`:''}
+        <div class="habit-actions">
+          <button class="icon-btn" onclick="openHabitModal('${h.id}')">${svgIcon('edit')}</button>
+          <button class="icon-btn" onclick="deleteHabit('${h.id}')">${svgIcon('trash')}</button>
+        </div>
       </div>`;
     });
     html += `</div>`;
   });
-  if(!any) html += `<div class="empty-note">No habits are scheduled for today. Add one from the Habits page.</div>`;
+  if(!any) html += `<div class="empty-note">No habits yet. <a href="#" onclick="openHabitModal();return false;" style="color:var(--gold);font-weight:600;">Add your first habit</a> to get started.</div>`;
   html += `</div>`;
   document.getElementById('today-habit-list').innerHTML = html;
 }
