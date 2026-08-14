@@ -1,11 +1,21 @@
 # Ambition — Habit Tracker
 
 A single-file, self-contained habit tracker with daily, weekly, and annual dashboards, built around one core rule: **touch at least 3 categories a day, and every category at least once a week.**
-
-![theme](https://img.shields.io/badge/theme-white%20%2F%20blue%20%2F%20grey-3b6fe0)
-![type](https://img.shields.io/badge/type-single--file%20app-1d4ed8)
-
 ---
+## 🌐 Live Demo
+
+🔗 **Try the application here:**
+
+**https://ambition-rajdevelopment.vercel.app/**
+
+> Experience the app directly in your browser—no installation required.
+---
+## 📸 Preview
+
+![Ambition](screenshots/preview1.png)
+![Ambition](screenshots/preview2.png)
+![Ambition](screenshots/preview3.png)
+![Ambition](screenshots/preview4.png)
 
 ## Getting started
 
